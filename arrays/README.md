@@ -6,7 +6,17 @@ In python we ususally use `lists` for arrays, unless we're working with NumPy or
 - `std::array`
 - c-style arrays
 
-`array.cpp` shows you a few ways (there are more) to initialize and use these different kinds of arrays.
+`array.cpp` shows you a few ways (there are more) to initialize and use these different kinds of arrays. To compile this file, move into the `arrays` directory and type
+
+```
+g++ -o arrays arrays.cpp
+```
+
+This runs the `g++` compiler (`clang`) on the source code `arrays.cpp` and puts the compiled code in the output file `arrays`. To run the code type
+
+```
+./arrays
+```
 
 ## `inline` keyword
 
