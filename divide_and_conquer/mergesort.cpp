@@ -4,7 +4,7 @@
 #include "utilities.h"
 using namespace std;
 
-vector<int> merge(const vector<int>& v1, const vector<int>& v2) {
+vector<int> merge(vector<int> v1, vector<int> v2) {
   if (v1.size() == 0) return v2;
   if (v2.size() == 0) return v1;
 
@@ -30,7 +30,7 @@ vector<int> merge(const vector<int>& v1, const vector<int>& v2) {
   return v;
 }
 
-vector<int> mergesort(vector<int>& nums) {
+vector<int> mergesort(vector<int> nums) {
   if (nums.size() > 1) {
     vector<int>::iterator mid = nums.begin() + nums.size() / 2;
     vector<int> slice_left(nums.begin(), mid);
@@ -41,12 +41,10 @@ vector<int> mergesort(vector<int>& nums) {
 }
 
 int main() {
-  vector<int> A = random_array(100000, 100);
+  vector<int> A = random_array(100000, 1000);
 
   clock_t start_cpu = std::clock();
   vector<int> sortedA = mergesort(A);
-  clock_t end_cpu = std::clock();
-  cout << "mergesort runtime: "
-       << static_cast<double>(end_cpu - start_cpu) / CLOCKS_PER_SEC << endl;
+  cout << "mergesort runtime: " << get_elapsed_time(start_cpu) << endl;
   return 0;
 }

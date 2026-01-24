@@ -52,9 +52,7 @@ int main() {
 
   clock_t start_cpu = std::clock();
   mergesort(A, 0, A.size(), temp);
-  clock_t end_cpu = std::clock();
-  cout << "mergesort runtime: "
-       << static_cast<double>(end_cpu - start_cpu) / CLOCKS_PER_SEC << endl;
+  cout << "mergesort runtime: " << get_elapsed_time(start_cpu) << endl;
   // cout << A << endl;
   return 0;
 }
